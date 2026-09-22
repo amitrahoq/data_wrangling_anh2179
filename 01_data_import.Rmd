@@ -18,11 +18,14 @@ library(tidyverse)
 Import our first data set 
 
 ```{r}
-file.exists("data/FAS_litters.csv")
 litters_df =
-  read.csv("data/FAS_litters.csv")
+  read.csv("data/FAS_litters.csv"
+           , 
+            na= c("","NA",".")
+        )
 
 litters_df = janitor:: clean_names(litters_df)
+litters_df
 
 ```
 
@@ -31,16 +34,23 @@ import second data set
 ```{r}
 
 pups_df = 
-  read_csv("data/FAS_pups.csv" , skip = 3)
+  read_csv("data/FAS_pups.csv", 
+           skip = 3,
+            na= c("","NA",".")
+          )
 pups_df = janitor:: clean_names(pups_df)
-
-```
-
-```{r}
-litters_df
 pups_df
 
 ```
+
+
+Head or tail
+``` {r}
+head(litters_df, 20)
+
+tail(pups_df,5)
+```
+
 skimming 
 
 ```{r}
@@ -48,4 +58,7 @@ skimming
 skimr::skim(pups_df)
 
 ```
+
+```{r}
+
 
