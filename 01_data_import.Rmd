@@ -10,7 +10,7 @@ This file is for doing data import
 ```{r}
 
 library(tidyverse)
-
+library(readxl)
 ```
 
 
@@ -19,8 +19,7 @@ Import our first data set
 
 ```{r}
 litters_df =
-  read.csv("data/FAS_litters.csv"
-           , 
+  read.csv("data/FAS_litters.csv", 
             na= c("","NA",".")
         )
 
@@ -59,6 +58,21 @@ skimr::skim(pups_df)
 
 ```
 
+## Oh excel..
+
+Jenny Bryan made `readxl` to solve our probrlems
 ```{r}
+mlb_df=
+  read_excel("data/mlb11.xlsx")
+
+mlb_df
+``` 
+
+## Load LoTR
 
 
+```{r}
+fotr_df= 
+  read_excel("data/LotR_Words.xlsx")
+
+fotr_df
