@@ -19,3 +19,38 @@ library(tidyverse)
     ## ✖ dplyr::filter() masks stats::filter()
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+Import our first data set
+
+``` r
+file.exists("data/FAS_litters.csv")
+```
+
+    ## [1] TRUE
+
+``` r
+litters_df =
+  read.csv("data/FAS_litters.csv")
+
+litters_df = janitor:: clean_names(litters_df)
+```
+
+import second data set
+
+``` r
+pups_df = 
+  read_csv("data/FAS_pups.csv" , skip = 3)
+```
+
+    ## Rows: 313 Columns: 6
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): Litter Number, PD ears
+    ## dbl (4): Sex, PD eyes, PD pivot, PD walk
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+pups_df = janitor:: clean_names(pups_df)
+```

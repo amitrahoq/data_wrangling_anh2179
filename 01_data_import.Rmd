@@ -13,3 +13,24 @@ library(tidyverse)
 
 ```
 
+
+
+Import our first data set 
+
+```{r}
+file.exists("data/FAS_litters.csv")
+litters_df =
+  read.csv("data/FAS_litters.csv")
+
+litters_df = janitor:: clean_names(litters_df)
+
+```
+
+import second data set 
+
+```{r}
+
+pups_df = 
+  read_csv("data/FAS_pups.csv" , skip = 3)
+pups_df = janitor:: clean_names(pups_df)
+
