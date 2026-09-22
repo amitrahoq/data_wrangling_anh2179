@@ -34,3 +34,18 @@ pups_df =
   read_csv("data/FAS_pups.csv" , skip = 3)
 pups_df = janitor:: clean_names(pups_df)
 
+```
+
+```{r}
+litters_df
+pups_df
+
+```
+skimming 
+
+```{r}
+
+skimr::skim(pups_df)
+
+```
+
