@@ -5,4 +5,11 @@ output: github_document
 date: "2026-09-15"
 ---
 
+This file is for doing data import
+
+```{r}
+
+library(tidyverse)
+
+```
 
